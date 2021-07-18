@@ -1,8 +1,8 @@
 // welcome to SmartCity
 //This is erum
-// khadijah loves bts 
+// kh
+// ksdjfsdfij adijah loves bts 
 
-// ksdjfsdfij 
 // dsvjnfsdv
 
 // no
@@ -10,3 +10,5 @@
 
 
 // :)))))))))))))))))))))))))))))))))
+/
+//main method 
