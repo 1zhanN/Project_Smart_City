@@ -1,65 +1,34 @@
 package oopproject;
-import oopproject.Administration;
-public class City {
 
-    private String name;
-    private String Country;
-    private Administration;                   
-    
-    public String getName() {
-        return this.name;
-    }
-  
-    public String setName(String name) {
+public 
+class City {
+
+   private String name;
+   private String Country;
+   // private Administration;                   
+
+   public String getName() {
+       return this.name;
+   }
+
+    public void setName(String name) {
         this.name = name;
     }
 
     public String getCountry() {
-        return this.Country;
-    }
-   
-    public String setCountry(String Country) {
-        this.Country = Country;
-    }
-    
-    public Administration getinvalid() {
-        return this.Administration;
-    }
-    
-    public Administration setinvalid(Administration ) {
-        this.Administration = Administration ;
-    }
-    
+       return this.Country;
+   }
 
-    //                          Operations                                  
-    
- 
-    public City() {
-     
-    }
- 
-    public City() {
-       
+    public void setCountry(String country) {
+        Country = country;
     }
 
-    public setName() {
-       
-    }
- 
-    public getName() {
-        
-    }
+// public Administration getinvalid() {
+   //     return this.Administration;
+   // }
 
-    public setCountry() {
-      
-    }
+   // public Administration setinvalid(Administration ) {
+   //     this.Administration = Administration ;
+   // }
 
-    public getCountry() {
-      
-    }
- 
-    public toString() {
-        
-    }
-    
 }

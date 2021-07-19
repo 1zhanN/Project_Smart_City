@@ -1,19 +1,19 @@
 package oopproject;
 
 public class Hotel extends LandMark {
-    
+
+    // yet to add composition
+
     public int price;
-    
-    public String[] Hotels = new String[];
-    
-    public Administration administration;
-    
-    public HotelReservations hotelReservations;
-    
+
+    Hotel(){
+        
+    }
     public Hotel(String name, String address, int price){
         super(name,address);
         this.price = price;
     }
+    
     
     public int getPrice() {
         return this.price;
@@ -23,16 +23,24 @@ public class Hotel extends LandMark {
         this.price = price;
     }
     
-    public HotelReservations getHotelReservations() {
-        return this.hotelReservations;
+
+    @Override
+    public String toString() {
+        return "Hotel{" +
+                "price=" + price +
+                "} " + super.toString();
     }
+
+
     
-    public HotelReservations setHotelReservations(HotelReservations hotelReservations) {
-        this.hotelReservations = hotelReservations;
-    }
+
+    // public HotelReservations getHotelReservations() {
+    //     return this.hotelReservations;
+    // }
     
-    public toString() {
-        
-    }
+    // public HotelReservations setHotelReservations(HotelReservations hotelReservations) {
+    //     this.hotelReservations = hotelReservations;
+    // }
+    
     
 }

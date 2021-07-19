@@ -1,41 +1,19 @@
 package oopproject;
-import java.util.ArrayList;
 
 public class ShoppingMalls extends LandMark {
     
+    // private Administration administration;    
+    
+    
+    public ShoppingMalls(String name, String address){
+        super(name, address);
+    }
 
-    private ArrayList<> ShoppimgMalls;
-    private Administration administration;
-
-    public ArrayList<> getShoppimgMalls() {
-        return this.ShoppimgMalls;
+    @Override
+    public String toString() {
+        return super.toString();
     }
-  
-    public ArrayList<> setShoppimgMalls(ArrayList<> ShoppimgMalls) {
-        this.ShoppimgMalls = ShoppimgMalls;
-    }
-    
-
-    public Administration getAdministration() {
-        return this.administration;
-    }
-    
-    public Administration setAdministration(Administration administration) {
-        this.administration = administration;
-    }
-    
-    //                          Operations                                  
- 
-    public ShoppingMalls() {
-     
-    }
-  
-    public ShoppingMalls() {
-        
-    }
-   
-    public toString() {
-    
-    }
-    
 }
+
+    
+
