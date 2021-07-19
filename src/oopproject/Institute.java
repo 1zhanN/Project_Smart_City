@@ -1,22 +1,19 @@
 package oopproject;
 
-public class Institute extends Administration {
+public class Institute extends LandMark {
     
-
-
-    //                          Operations                                  
-    
-
     public Institute() {
         
     }
 
     public Institute(String name, String address) {
+        super(name, address);
         
     }
  
-    public toString() {
-        
+    @Override
+    public String toString() {
+        return super.toString();
     }
     
 }

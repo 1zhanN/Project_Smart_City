@@ -1,6 +1,6 @@
 package oopproject;
 
-class LandMark {
+public class LandMark {
 
     public String name;
     public String address;
