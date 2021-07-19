@@ -1,58 +1,43 @@
 package oopproject;
 
-public class LandMark {
-    
-    private String name;
-    private String address;
+class LandMark {
+
+    public String name;
+    public String address;
+
+
+    LandMark() {
+
+    }
+
+    LandMark(String name, String address){
+        this.name = name;
+        this.address = address;
+
+    }
 
     public String getName() {
-        return this.name;
+        return name;
     }
     
-  
     public void setName(String name) {
         this.name = name;
     }
-    
-  
+
     public String getAddress() {
-        return this.address;
+        return address;
     }
-    
+
     public void setAddress(String address) {
         this.address = address;
     }
-    
-    
 
-    //                          Operations                                  
-
-    public LandMark() {
-       
+    @Override
+    public String toString() {
+        return "LandMark{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 
-    public LandMark() {
-       
-    }
- 
-    public setName() {
-       
-    }
- 
-    public getName() {
-        
-    }
-  
-    public setAddress() {
-        
-    }
- 
-    public getAddress() {
-       
-    }
-  
-    public toString() {
-        
-    }
-    
 }
