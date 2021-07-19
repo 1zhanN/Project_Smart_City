@@ -1,4 +1,4 @@
-package Hotel;
+package oopproject;
 
 public class Hotel extends LandMark {
     

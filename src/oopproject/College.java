@@ -1,4 +1,4 @@
-package College;
+package oopproject;
 
 
 public class College extends Institute {

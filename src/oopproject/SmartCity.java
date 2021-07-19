@@ -1,14 +1,9 @@
 // welcome to SmartCity
-//This is erum
-// kh
-// ksdjfsdfij adijah loves bts 
 
-// dsvjnfsdv
-
-// no
-
-
-
-// :)))))))))))))))))))))))))))))))))
-/
 //main method 
+package oopproject;
+public class SmartCity{
+    public static void main(String[] args) {
+        
+    }
+}

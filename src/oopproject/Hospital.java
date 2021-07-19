@@ -1,4 +1,4 @@
-package Hospital;
+package oopproject;
 public class Hospital extends LandMark {
     
     public String[] Hospital = new String[];

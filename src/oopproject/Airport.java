@@ -1,4 +1,4 @@
-package Airport;
+package oopproject;
 
 public class Airport extends LandMark {
     

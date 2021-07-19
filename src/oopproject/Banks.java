@@ -1,4 +1,4 @@
-package Banks;
+package oopproject;
 
 public class Banks extends LandMark {
    
