@@ -114,7 +114,7 @@ public class Administration {
         return institutes.toString();
     }
 
-    
+
     public String getAirport() {
         return airport.toString();
     }
@@ -125,7 +125,7 @@ public class Administration {
 
     @Override
     public String toString() {
-        return "Administration{" + ", hotel=" + hotel + "\nrestaurant=" + restaurant + "\nshoppingMalls="
+        return "Administration{" + "\nhotel=" + hotel + "\nrestaurant=" + restaurant + "\nshoppingMalls="
                 + shoppingMalls + "\nhospitals=" + hospitals + "\nemergencyNos=" + emergencyNos + "\nbanks=" + banks
                 + "\ninstitutes=" + institutes + "\nairport=" + airport + "\ncity=" + city + '}';
     }

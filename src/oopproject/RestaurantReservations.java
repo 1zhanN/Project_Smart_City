@@ -2,7 +2,7 @@ package oopproject;
 
 import java.util.*;
 
-public class RestaurantReservations extends Restaurant {
+public class RestaurantReservations{
 
     public String name;
     public int noOfPeople;

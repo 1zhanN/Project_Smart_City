@@ -22,11 +22,11 @@ class City {
     }
 
     public String getCountry() {
-       return this.Country;
+       return this.country;
    }
 
     public void setCountry(String country) {
-        Country = country;
+        this.country = country;
     }
 
 // public Administration getinvalid() {
