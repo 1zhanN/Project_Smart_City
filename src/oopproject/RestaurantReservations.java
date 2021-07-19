@@ -1,116 +1,59 @@
 package oopproject;
-public class RestaurantReservations extends Restaurant{
+
+import java.util.*;
+
+public class RestaurantReservations extends Restaurant {
+
+    public String name;
+    public int noOfPeople;
     
-    private String name;
-    private Restaurant restaurant; 
-    private Integer noOfPeople;
-    private Integer time;
-    private Integer date;
-    private Restaurant restaurant2;
-    
+    // public int time;
+
+
+    public Date date;
+
+    // public Restaurant restaurant;
+
+
     public String getName() {
         return this.name;
     }
-    
 
-    public String setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
-    
- 
-    public Restaurant getRestaurant() {
-        return this.restaurant;
-    }
-    
-    public Restaurant setRestaurant(Restaurant restaurant) {
-        this.restaurant = restaurant;
-    }
-    
- 
-    public Integer getNoOfPeople() {
+
+    // public Restaurant getRestaurant() {
+    //     return this.restaurant;
+    // }
+
+    // public Restaurant setRestaurant(Restaurant restaurant) {
+    //     this.restaurant = restaurant;
+    // }
+
+    public int getNoOfPeople() {
         return this.noOfPeople;
     }
-    
-    public Integer setNoOfPeople(Integer noOfPeople) {
+
+    public void setNoOfPeople(int noOfPeople) {
         this.noOfPeople = noOfPeople;
     }
- 
-    public Integer getTime() {
-        return this.time;
-    }
-    
-    public Integer setTime(Integer time) {
-        this.time = time;
-    }
-    
-    public Integer getDate() {
+
+    // public int getTime() {
+    //     return this.time;
+    // }
+
+    // public Integer setTime(Integer time) {
+    //     this.time = time;
+    // }
+
+    public Date getDate() {
         return this.date;
     }
 
-    public Integer setDate(Integer date) {
+    public void setDate(Date date) {
         this.date = date;
     }
-    
-    public Restaurant getRestaurant2() {
-        return this.restaurant2;
-    }
 
-    public Restaurant setRestaurant2(Restaurant restaurant2) {
-        this.restaurant2 = restaurant2;
-    }
-    
-    //                          Operations                                  
 
-    public RestaurantReservations() {
-      
-    }
-  
-    public setName() {
-       
-    }
-   
-    public getName() {
-        
-    }
-  
-    public setNoOfPeople() {
-      
-    }
-
-    public getnoOfPeople() {
-       
-    }
- 
-    public setTime() {
-       
-    }
- 
-    public getTime() {
-        
-    }
-
-    public setDate() {
-   
-    }
-  
-    public getDate() {
-       
-    }
- 
-    public reservations() {
-     
-    }
-
-    public toString() {
-        
-    }
-  
-    public operation12() {
-       
-    }
-  
-    public operation13() {
-
-    }
-    
 }

@@ -1,35 +1,28 @@
 package oopproject;
 
+import java.util.ArrayList;
+
 public class Administration {
     
     
     public String name;
-    
-   
     private String password;
     
-    public String[] Hotel = new String[];
-    
-    public String[] Restaurant = new String[];
-    
-    public String[] ShoppingMall = new String[];
-    
-    public String[] Hospital = new String[];
-    
-    public String[] emergencyNos = new String[];
-    
-    public String[] Banks = new String[];
-    
-    public String[] Institutes = new String[];
-    
+    public ArrayList<Hotel> hotel = new ArrayList<>();
+    public ArrayList<Restaurant> restaurant = new ArrayList<>();
+    public ArrayList<ShoppingMalls> shoppingMalls = new ArrayList<>();
+    public ArrayList<Hospital> hospitals = new ArrayList<>();
+    public ArrayList<EmergencyNos> emergencyNos = new ArrayList<>();
+    public ArrayList<Banks> banks = new ArrayList<>();
+    public ArrayList<Institute> institutes = new ArrayList<>();
     public Airport airport;
-    
     public City city;
     
-    public String getName() {
-        return this.name;
+
+    Administration(){
+
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -38,86 +31,105 @@ public class Administration {
         this.password = password;
     }
 
-    public void[] addHotel(String Hotel)) {
-        this.Hotel = Hotel;
-    }
-    public void[] removeHotel(String Hotel)) {
-        this.Hotel = Hotel;
-    }
-    public String[] getHotel() {
-        return Hotel;
+    public void addHotel(Hotel hotel) {
+       this.hotel.add(hotel);
     }
 
-    public void[] addRestaurant(String Restaurant)) {
-        this.Restaurant = Restaurant;
-    }
-    public void[] removeRestaurant(String Restaurant)) {
-        this.Restaurant = Restaurant;
-    }
-    public String[] getRestaurant() {
-        return Restaurant;
+
+    public void removeHotel(Hotel hotel) {
+        this.hotel.remove(hotel);
     }
 
-    public void[] addShoppingMall(String ShoppingMall)) {
-        this.ShoppingMall = ShoppingMall;
+
+    // public String<> getHotel() {
+    //     return Hotel;
+    // }
+
+    public void addRestaurant(Restaurant restaurant) {
+        this.restaurant.add(restaurant);
+
     }
-    public void[] removeShoppingMall(String ShoppingMall)) {
-        this.ShoppingMall = ShoppingMall;
+    public void removeRestaurant(Restaurant restaurant) {
+        this.restaurant.remove(restaurant);
     }
-    public String[] getShoppingMall() {
-        return ShoppingMall;
+    // public String[] getRestaurant() {
+    //     return Restaurant;
+    // }
+
+    public void addShoppingMall(ShoppingMalls shoppingMalls) {
+        this.shoppingMalls.add(shoppingMalls);
+    }
+    public void removeShoppingMall(ShoppingMalls shoppingMalls){
+        this.shoppingMalls.remove(shoppingMalls);
     }
 
-    public void[] addHospital(String Hospital)) {
-        this.Hospital = Hospital;
+    // public String[] getShoppingMall() {
+    //     return ShoppingMall;
+    // }
+
+    public void addHospital(Hospital hospitals) {
+        this.hospitals.add(hospitals);
     }
-    public void[] removeHospital(String Hospital)) {
-        this.Hospital = Hospital;
+    public void removeHospital(Hospital hospitals) {
+        this.hospitals.remove(hospitals);
     }
-    public String[] getHospital() {
-        return Hospital;
+    // public String[] getHospital() {
+    //     return Hospital;
+    // }
+    
+    public void addemergencyNos(EmergencyNos emergencyNos) {
+        this.emergencyNos.add(emergencyNos);
+    }
+    public void removeemergencyNos(EmergencyNos emergencyNos) {
+        this.emergencyNos.remove(emergencyNos);
+    }
+    // public String[] getemergencyNos() {
+    //     return emergencyNos;
+    // }
+    
+    public void addBanks(Banks banks){
+        this.banks.add(banks);
+    }
+    public void removeBanks(Banks banks) {
+        this.banks.remove(banks);
+    }
+    // public String[] getBanks() {
+    //     return Banks;
+    // }
+    
+    public void addInstitutes(Institute institutes) {
+        this.institutes.add(institutes);
+    }
+    public void removeInstitutes(Institute institutes) {
+        this.institutes.remove(institutes);
+    }
+    // public String[] getInstitutes(String Institutes)) {
+    //     return Institutes;
+    // }
+    
+    // public Airport getAirport() {
+    //     return this.airport;
+    // }
+    
+    // public void setAirport(Airport airport) {
+    //     this.airport = airport;
+    // }
+
+    @Override
+    public String toString() {
+        return "Administration{" +
+                ", hotel=" + hotel +
+                ", restaurant=" + restaurant +
+                ", shoppingMalls=" + shoppingMalls +
+                ", hospitals=" + hospitals +
+                ", emergencyNos=" + emergencyNos +
+                ", banks=" + banks +
+                ", institutes=" + institutes +
+                ", airport=" + airport +
+                ", city=" + city +
+                '}';
     }
     
-    public void[] addemergencyNos(String emergencyNos)) {
-        this.emergencyNos = emergencyNos;
-    }
-    public void[] removeemergencyNos(String emergencyNos)) {
-        this.emergencyNos = emergencyNos;
-    }
-    public String[] getemergencyNos() {
-        return emergencyNos;
-    }
-    
-    public void[] addBanks(String Banks)) {
-        this.Banks = Banks;
-    }
-    public void[] removeBanks(String Banks)) {
-        this.Banks = Banks;
-    }
-    public String[] getBanks() {
-        return Banks;
-    }
-    
-    public String[] addInstitutes() {
-        this.Institutes = Institutes;
-    }
-    public String[] removeInstitutes() {
-        this.Institutes = Institutes;
-    }
-    public String[] getInstitutes(String Institutes)) {
-        return Institutes;
-    }
-    
-    public Airport getAirport() {
-        return this.airport;
-    }
-    
-    public Airport setAirport(Airport airport) {
-        this.airport = airport;
-    }
-    
-    public toString() {
-        
-    }
+   
     
 }

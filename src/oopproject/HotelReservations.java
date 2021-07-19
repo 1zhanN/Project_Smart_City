@@ -1,136 +1,83 @@
 package oopproject;
-public class HotelReservations extends Hotel{
+
+import java.sql.Date;
+
+public class HotelReservations{
     
   
-    private String name;
-    private String nameOfHotel;
-    private Integer noOfRooms;
-    private Integer totalPeople;
-    private Hotel hotel;
-    private double total;
-    private Integer date;
-    private Hotel hotel2;
+    public String name;
+    public String nameOfHotel;
+    public int noOfRooms;
+    public int totalPeople;
+    public  double total;
+    public  Date date;
+    public Hotel hotel;
+
+
+
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    public String setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
     public String getNameOfHotel() {
-        return this.nameOfHotel;
+        return nameOfHotel;
     }
    
-    public String setNameOfHotel(String nameOfHotel) {
+    public void  setNameOfHotel(String nameOfHotel) {
         this.nameOfHotel = nameOfHotel;
     }
   
     public Integer getNoOfRooms() {
-        return this.noOfRooms;
+        return noOfRooms;
     }
    
-    public Integer setNoOfRooms(Integer noOfRooms) {
+    public void  setNoOfRooms(Integer noOfRooms) {
         this.noOfRooms = noOfRooms;
     }
  
-    public Integer getTotalPeople() {
-        return this.totalPeople;
+    public int getTotalPeople() {
+        return totalPeople;
     }
 
-    public Integer setTotalPeople(Integer totalPeople) {
+    public void  setTotalPeople(Integer totalPeople) {
         this.totalPeople = totalPeople;
     }
     
-    public Hotel getHotel() {
-        return this.hotel;
-    }
+    // public Hotel getHotel() {
+    //     return this.hotel;
+    // }
 
-    public Hotel setHotel(Hotel hotel) {
-        this.hotel = hotel;
-    }
+    // public Hotel setHotel(Hotel hotel) {
+    //     this.hotel = hotel;
+    // }
     
     public double getTotal() {
-        return this.total;
+        return total;
     }
 
-    public double setTotal(double total) {
+    public void setTotal(double total) {
         this.total = total;
     }
  
-    public Integer getDate() {
-        return this.date;
+    public Date getDate() {
+        return date;
     }
 
-    public Integer setDate(Integer date) {
+    public void setDate(Date date) {
         this.date = date;
     }
     
-    public Hotel getHotel2() {
-        return this.hotel2;
-    }
+    // public Hotel getHotel2() {
+    //     return this.hotel2;
+    // }
 
-    public Hotel setHotel2(Hotel hotel2) {
-        this.hotel2 = hotel2;
-    }
+    // public Hotel setHotel2(Hotel hotel2) {
+    //     this.hotel2 = hotel2;
+    // }
     
 
-    //                          Operations                                  
-    
-    public HotelReservations() {
-     
-    }
-
-    public setName() {
-        
-    }
-
-    public getName() {
-        
-    }
- 
-    public setNoOfRooms() {
-        
-    }
-
-    public getNoOfRooms() {
-        
-    }
-  
-    public setTotalPeople() {
-        
-    }
-  
-    public getTotalPeople() {
-        
-    }
-
-    public setTotal() {
-        
-    }
-  
-    public getTotal() {
-      
-    }
-
-    public setDate() {
-        
-    }
-
-    public getDate() {
-        
-    }
-  
-    public reservations() {
-       
-    }
- 
-    public TotalBill() {
-        
-    }
- 
-    public toString() {
-        
-    }
-    
 }
