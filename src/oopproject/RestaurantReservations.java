@@ -6,14 +6,10 @@ public class RestaurantReservations extends Restaurant {
 
     public String name;
     public int noOfPeople;
+    public Date date;
+    public Restaurant restaurant;
     
     // public int time;
-
-
-    public Date date;
-
-    // public Restaurant restaurant;
-
 
     public String getName() {
         return this.name;
@@ -23,9 +19,9 @@ public class RestaurantReservations extends Restaurant {
         this.name = name;
     }
 
-    // public Restaurant getRestaurant() {
-    //     return this.restaurant;
-    // }
+    public String getRestaurant() {
+        return restaurant.toString();
+    }
 
     // public Restaurant setRestaurant(Restaurant restaurant) {
     //     this.restaurant = restaurant;

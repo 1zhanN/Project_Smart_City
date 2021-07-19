@@ -47,9 +47,9 @@ public class HotelReservations{
         this.totalPeople = totalPeople;
     }
     
-    // public Hotel getHotel() {
-    //     return this.hotel;
-    // }
+    public String getHotel() {
+        return hotel.toString();
+    }
 
     // public Hotel setHotel(Hotel hotel) {
     //     this.hotel = hotel;
@@ -70,14 +70,6 @@ public class HotelReservations{
     public void setDate(Date date) {
         this.date = date;
     }
-    
-    // public Hotel getHotel2() {
-    //     return this.hotel2;
-    // }
-
-    // public Hotel setHotel2(Hotel hotel2) {
-    //     this.hotel2 = hotel2;
-    // }
     
 
 }
