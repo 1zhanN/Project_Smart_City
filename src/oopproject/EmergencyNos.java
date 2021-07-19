@@ -6,6 +6,11 @@ public class EmergencyNos {
     public String information;
 
 
+    public EmergencyNos(int number, String information) {
+        this.number = number;
+        this.information = information;
+    }
+
     public int getNumber() {
         return this.number;
     }

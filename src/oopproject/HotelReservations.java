@@ -15,6 +15,14 @@ public class HotelReservations{
 
 
 
+    HotelReservations(String name, String nameOfHotel, int noOfRooms, int totalPeople){
+
+        this.name = name;
+        this.nameOfHotel = nameOfHotel;
+        this.noOfRooms = noOfRooms;
+        this.totalPeople = totalPeople;
+    }
+
     public String getName() {
         return name;
     }

@@ -4,8 +4,14 @@ public
 class City {
 
    private String name;
-   private String Country;
-   // private Administration;                   
+   private String country;
+   // private Administration;       
+   
+   City(String name, String country){
+       this.name = name;
+       this.country = country;
+
+   }
 
    public String getName() {
        return this.name;
