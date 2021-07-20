@@ -82,7 +82,7 @@ public class SmartCity {
                             System.out.print("Enter number: ");
                             input.nextLine();
                             int no = input.nextInt();
-                            System.out.print("Enter information regarding information: ");
+                            System.out.print("Enter information regarding the number: ");
                             String info = input.nextLine();
                             admin.addemergencyNos(new EmergencyNos(no, info));
                         } else if (choice == 9) {
