@@ -9,6 +9,10 @@ public class Hotel extends LandMark {
     Hotel(){
         
     }
+    
+    public Hotel(String name, String address) {
+        super(name, address);
+    }
     public Hotel(String name, String address, int price){
         super(name,address);
         this.price = price;
