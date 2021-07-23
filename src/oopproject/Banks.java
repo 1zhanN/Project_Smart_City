@@ -1,10 +1,10 @@
 package oopproject;
 
 public class Banks extends LandMark {
-       
+
     // public Administration administration;
-    
-    public Banks(String name, String address){
+
+    public Banks(String name, String address) {
         super(name, address);
     }
 

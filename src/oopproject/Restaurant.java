@@ -2,11 +2,11 @@ package oopproject;
 
 public class Restaurant extends LandMark {
 
-    Restaurant(){
-        
+    Restaurant() {
+
     }
 
-    public Restaurant(String name, String address){
+    public Restaurant(String name, String address) {
         super(name, address);
     }
 
@@ -14,5 +14,5 @@ public class Restaurant extends LandMark {
     public String toString() {
         return super.toString();
     }
-    
+
 }

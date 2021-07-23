@@ -1,11 +1,13 @@
 // welcome to SmartCity
 
-//main method 
+//main method
 package oopproject;
+
 
 import java.util.Scanner;
 
 public class SmartCity {
+
     public static void main(String[] args) {
 
         Administration admin = new Administration();
@@ -14,7 +16,9 @@ public class SmartCity {
                 What would you like to do: 
                 Enter 1 to add data
                 Enter 2 to view data
+                Enter 3 to remove data
                 """);
+
 
         Scanner input = new Scanner(System.in);
         System.out.print("Enter: ");
@@ -27,7 +31,7 @@ public class SmartCity {
                         System.out.println("""
                                                             
                                 ----------------------------------------------------
-                                            Welcome to HumSafar
+                                            Welcome to ہمسفر 
                                          
                                             Enter 1 to add Airport
                                             Enter 2 to add a Hospital
@@ -46,26 +50,27 @@ public class SmartCity {
                         System.out.print("Enter: ");
                         int choice = input.nextInt();
 
-                        if (choice == 1) {
-                            System.out.println("Airport shhhhhhhhhhhhhhhh");
-                        } else if (choice == 2 || choice == 3 || choice == 4 || choice == 5 || choice == 6 || choice == 7) {
+                        if (choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5 || choice == 6 || choice == 7) {
                             System.out.print("Enter name: ");
                             input.nextLine();
                             String name = input.nextLine();
                             System.out.print("Enter address: ");
                             String address = input.nextLine();
 
-                            if (choice == 2) {
+                            if (choice == 1) admin.addAirport(new Airport(name, address));
+                            else if (choice == 2){
+//                                hospital = new Hospital();
+//                                hospital.setName(name);
+//                                hospital.setAddress(address);
+//                                admin.addHospital(hospital);
+
                                 admin.addHospital(new Hospital(name, address));
-                            } else if (choice == 3) {
-                                admin.addRestaurant(new Restaurant(name, address));
-                            } else if (choice == 4) {
-                                admin.addShoppingMall(new ShoppingMalls(name, address));
-                            } else if (choice == 5) {
-                                admin.addBanks(new Banks(name, address));
-                            } else if (choice == 6) {
-                                admin.addHotel(new Hotel(name, address));
-                            } else {
+                            }
+                            else if (choice == 3) admin.addRestaurant(new Restaurant(name, address));
+                            else if (choice == 4) admin.addShoppingMall(new ShoppingMalls(name, address));
+                            else if (choice == 5) admin.addBanks(new Banks(name, address));
+                            else if (choice == 6) admin.addHotel(new Hotel(name, address));
+                            else {
                                 System.out.println("""
                                         What would u like to add: 
                                         Enter 1 to add a school
@@ -83,6 +88,8 @@ public class SmartCity {
                             input.nextLine();
                             int no = input.nextInt();
                             System.out.print("Enter information regarding the number: ");
+                            input.nextLine();
+
                             String info = input.nextLine();
                             admin.addemergencyNos(new EmergencyNos(no, info));
                         } else if (choice == 9) {
@@ -118,7 +125,7 @@ public class SmartCity {
                                  -------------------------------------------------------
                                 """);
 
-                        System.out.println("Enter: ");
+                        System.out.print("Enter: ");
                         int num = input.nextInt();
 
                         if (num == 1) System.out.println(admin.getAirport());
@@ -134,7 +141,6 @@ public class SmartCity {
                         else System.out.println("Enter a valid number");
 
 
-
                         System.out.println("\nWould you like to continue: ");
                         System.out.println("""
                                 Enter 1 to continue 
@@ -142,19 +148,172 @@ public class SmartCity {
                     } while (input.nextInt() != 2);
 
                     break;
+
+                case 3:
+                    System.out.println("""
+                             -----------------------------------------------------
+                                          What would you like to remove? 
+                                          
+                                            Enter 1 to remove Airport
+                                            Enter 2 to remove a Hospital
+                                            Enter 3 to remove a Restaurant
+                                            Enter 4 to remove a Shopping Mall
+                                            Enter 5 to remove a Bank
+                                            Enter 6 to remove a Hotel
+                                            Enter 7 to remove an Institute
+                                            Enter 8 to remove an Emergency Number
+                                            Enter 9 to remove all the information about the city
+                                            Enter 10 to exit
+                             -------------------------------------------------------
+                            """);
+                    System.out.print("Enter: ");
+                    int num = input.nextInt();
+//
+//                    if (num == 1) System.out.println(admin.removeAirport(););
+
+//                   index number pass kara ke removal of a particular thing
+
+                    if (num == 2) {
+                        boolean hospitalNotFound = true;
+                        if (admin.hospitals.isEmpty()) {
+                            System.out.println("Hospital is empty");
+                        } else {
+                            input.nextLine();
+                            System.out.print("Enter the name of the hospital you want to remove: ");
+                            String removal = input.nextLine();
+                            for (int j = 0; j <  admin.hospitals.size(); j++) {
+                                if (admin.hospitals.get(j).name.equals(removal)) {
+                                    admin.removeHospital(j);
+                                    hospitalNotFound = false;
+                                }
+                            }
+                            if (hospitalNotFound){
+                                System.out.println("Hospital Not found");
+                            }
+                        }
+                    }
+
+
+                    else if (num == 3) {
+                        boolean restaurantNotFound = true;
+                        if (admin.restaurant.isEmpty()) {
+                            System.out.println("Restaurant is empty");
+                        } else {
+                            input.nextLine();
+                            System.out.print("Enter the name of the restaurant you want to remove: ");
+                            String removal = input.nextLine();
+                            for (int j = 0; j <  admin.restaurant.size(); j++) {
+                                if (admin.restaurant.get(j).name.equals(removal)) {
+                                    admin.removeRestaurant(j);
+                                    restaurantNotFound = false;
+                                }
+                            }
+                            if (restaurantNotFound){
+                                System.out.println("restaurant Not found");
+                            }
+                        }
+                    }
+
+
+                    else if (num == 4) {
+                        boolean mallNotFound = true;
+                        if (admin.shoppingMalls.isEmpty()) {
+                            System.out.println("shoppingMalls is empty");
+                        } else {
+                            input.nextLine();
+                            System.out.print("Enter the name of the shoppingMall you want to remove: ");
+                            String removal = input.nextLine();
+                            for (int j = 0; j <  admin.shoppingMalls.size(); j++) {
+                                if (admin.shoppingMalls.get(j).name.equals(removal)) {
+                                    admin.removeShoppingMall(j);
+                                    mallNotFound = false;
+                                }
+                            }
+                            if (mallNotFound){
+                                System.out.println("shoppingMalls Not found");
+                            }
+                        }
+                    }
+                    else if (num == 5) {
+                        boolean bankNotFound = true;
+                        if (admin.banks.isEmpty()) {
+                            System.out.println("bank is empty");
+                        } else {
+                            input.nextLine();
+                            System.out.print("Enter the name of the banks you want to remove: ");
+                            String removal = input.nextLine();
+                            for (int j = 0; j <  admin.banks.size(); j++) {
+                                if (admin.banks.get(j).name.equals(removal)) {
+                                    admin.removeBanks(j);
+                                    bankNotFound = false;
+                                }
+                            }
+                            if (bankNotFound){
+                                System.out.println("banks Not found");
+                            }
+                        }
+                    }
+                    else if (num == 6) {
+                        boolean hotelNotFound = true;
+                        if (admin.hotel.isEmpty()) {
+                            System.out.println("hotel is empty");
+                        } else {
+                            input.nextLine();
+                            System.out.print("Enter the name of the hotel you want to remove: ");
+                            String removal = input.nextLine();
+                            for (int j = 0; j <  admin.hotel.size(); j++) {
+                                if (admin.hotel.get(j).name.equals(removal)) {
+                                    admin.removeHotel(j);
+                                    hotelNotFound = false;
+                                }
+                            }
+                            if (hotelNotFound){
+                                System.out.println("hotel Not found");
+                            }
+                        }
+                    }
+//                    else if (num == 7) System.out.println(admin.getInstitutes());
+//                    else if (num == 8) System.out.println(admin.getemergencyNos());
+//                    else if (num == 9) System.out.println(admin.toString());
+//                    else if (num == 10) System.exit(0);
+
+
+                    else System.out.println("Enter a valid number");
+
+
+
+
             }
             System.out.println("""
                                         
                     What would you like to do: 
                     Enter 1 to add data
                     Enter 2 to view data
-                    Enter 3 to exit out of the system
+                    Enter 3 to delete data
+                    Enter 4 to exit out of the system
                     """);
 
             number = input.nextInt();
 
-        } while (number != 3);
+        } while (number != 4);
 
+
+//        Object k =  new Hospital();
+//        void haha(){
+//            System.out.println("hi");
+//        }
+
+
+
+//        Hospital hos = new Hospital("dha", "dha");
+//        System.out.println("Before");
+//        admin.hospitals.add(hos);
+//        System.out.println(admin.getHospital());
+//        System.out.println("after");
+//
+//
+//        admin.hospitals.remove(hos);
+//        System.out.println(admin.getHospital());
 
 
 //

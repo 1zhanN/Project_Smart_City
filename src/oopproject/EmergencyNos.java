@@ -1,5 +1,6 @@
 package oopproject;
 
+
 public class EmergencyNos {
 
     public int number;
@@ -27,12 +28,12 @@ public class EmergencyNos {
         this.information = information;
     }
 
-     @Override
-     public String toString() {
-         return "EmergencyNos{" +
-                 "number=" + number +
-                 ", information='" + information + '\'' +
-                 '}';
-     }
- }
+    @Override
+    public String toString() {
+        return "EmergencyNos{" +
+                "number=" + number +
+                ", information='" + information + '\'' +
+                '}';
+    }
+}
 

@@ -2,20 +2,19 @@ package oopproject;
 
 import java.util.Date;
 
-public class HotelReservations{
-    
-  
+public class HotelReservations {
+
+
     public String name;
     public String nameOfHotel;
     public int noOfRooms;
     public int totalPeople;
-    public  double total;
-    public  Date date;
+    public double total;
+    public Date date;
     public Hotel hotel;
 
 
-
-    HotelReservations(String name, String nameOfHotel, int noOfRooms, int totalPeople){
+    HotelReservations(String name, String nameOfHotel, int noOfRooms, int totalPeople) {
 
         this.name = name;
         this.nameOfHotel = nameOfHotel;
@@ -34,27 +33,27 @@ public class HotelReservations{
     public String getNameOfHotel() {
         return nameOfHotel;
     }
-   
-    public void  setNameOfHotel(String nameOfHotel) {
+
+    public void setNameOfHotel(String nameOfHotel) {
         this.nameOfHotel = nameOfHotel;
     }
-  
+
     public Integer getNoOfRooms() {
         return noOfRooms;
     }
-   
-    public void  setNoOfRooms(Integer noOfRooms) {
+
+    public void setNoOfRooms(Integer noOfRooms) {
         this.noOfRooms = noOfRooms;
     }
- 
+
     public int getTotalPeople() {
         return totalPeople;
     }
 
-    public void  setTotalPeople(Integer totalPeople) {
+    public void setTotalPeople(Integer totalPeople) {
         this.totalPeople = totalPeople;
     }
-    
+
     public String getHotel() {
         return hotel.toString();
     }
@@ -62,7 +61,7 @@ public class HotelReservations{
     // public Hotel setHotel(Hotel hotel) {
     //     this.hotel = hotel;
     // }
-    
+
     public double getTotal() {
         return total;
     }
@@ -70,7 +69,7 @@ public class HotelReservations{
     public void setTotal(double total) {
         this.total = total;
     }
- 
+
     public Date getDate() {
         return date;
     }
@@ -78,6 +77,6 @@ public class HotelReservations{
     public void setDate(Date date) {
         this.date = date;
     }
-    
+
 
 }

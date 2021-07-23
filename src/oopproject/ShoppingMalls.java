@@ -1,11 +1,11 @@
 package oopproject;
 
 public class ShoppingMalls extends LandMark {
-    
-    // private Administration administration;    
-    
-    
-    public ShoppingMalls(String name, String address){
+
+    // private Administration administration;
+
+
+    public ShoppingMalls(String name, String address) {
         super(name, address);
     }
 
@@ -15,5 +15,5 @@ public class ShoppingMalls extends LandMark {
     }
 }
 
-    
+
 

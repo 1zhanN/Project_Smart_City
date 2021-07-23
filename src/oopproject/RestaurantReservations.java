@@ -1,14 +1,15 @@
 package oopproject;
 
+
 import java.util.*;
 
-public class RestaurantReservations{
+public class RestaurantReservations {
 
     public String name;
     public int noOfPeople;
     public Date date;
     public Restaurant restaurant;
-    
+
     // public int time;
 
     public String getName() {

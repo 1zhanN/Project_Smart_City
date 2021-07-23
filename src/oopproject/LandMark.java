@@ -1,6 +1,8 @@
 package oopproject;
 
-public class LandMark {
+
+
+abstract public class LandMark {
 
     public String name;
     public String address;
@@ -10,7 +12,7 @@ public class LandMark {
 
     }
 
-    LandMark(String name, String address){
+    LandMark(String name, String address) {
         this.name = name;
         this.address = address;
 
@@ -19,7 +21,7 @@ public class LandMark {
     public String getName() {
         return name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
