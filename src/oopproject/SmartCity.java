@@ -8,6 +8,10 @@ public class SmartCity {
     public static void main(String[] args) {
 
         Administration admin = new Administration();
+        City city = new City();
+        city.setName("Karachi");
+        city.setCountry("Pakistan");
+        admin.setCity(new City("Karachi", "pakistan"));
         System.out.println("""
                 -----------------------------------
                          Welcome to ہمسفر 
@@ -20,6 +24,7 @@ public class SmartCity {
                 Enter 1 to add data
                 Enter 2 to view data
                 Enter 3 to remove data
+                Enter 4 to exit system
                 """);
 
 
@@ -31,11 +36,9 @@ public class SmartCity {
 
 
         int number = 0;
-        boolean errorOccured;
         do {
 
             try {
-                errorOccured = false;
 
 //                input.nextLine();
                 number = input.nextInt();
@@ -72,7 +75,12 @@ public class SmartCity {
                                 System.out.print("Enter address: ");
                                 String address = input.nextLine();
 
-                                if (choice == 1) admin.addAirport(new Airport(name, address));
+                                if (choice == 1) {
+//                                    Airport airport =);
+                                    admin.addAirport(new Airport(name, address));
+//                                    System.out.println(airport);
+//                                    admin.addAirport(name, address);
+                                }
                                 else if (choice == 2) {
 //                                hospital = new Hospital();
 //                                hospital.setName(name);
@@ -177,16 +185,35 @@ public class SmartCity {
                                                 Enter 8 to remove an Emergency Number
                                                 Enter 9 to remove all the information about the city
                                                 Enter 10 to exit
+                                                
                                  -------------------------------------------------------
                                 """);
                         System.out.print("Enter: ");
                         int num = input.nextInt();
 //
-//                    if (num == 1) System.out.println(admin.removeAirport(););
+                    if (num == 1) {
+                        boolean airportNotFound = true;
+                        if (admin.airport.isEmpty()) {
+                            System.out.println("airport is empty");
+                        } else {
+                            input.nextLine();
+                            System.out.print("Enter the name of the airport you want to remove: ");
+                            String removal = input.nextLine();
+                            for (int j = 0; j < admin.airport.size(); j++) {
+                                if (admin.airport.get(j).name.equals(removal)) {
+                                    admin.removeAirport(j);
+                                    airportNotFound = false;
+                                }
+                            }
+                            if (airportNotFound) {
+                                System.out.println("airport Not found");
+                            }
+                        }
+                    }
 
 //                   index number pass kara ke removal of a particular thing
 
-                        if (num == 2) {
+                       else if (num == 2) {
                             boolean hospitalNotFound = true;
                             if (admin.hospitals.isEmpty()) {
                                 System.out.println("Hospital is empty");
@@ -288,12 +315,25 @@ public class SmartCity {
                         break;
 
                     case 4:
+                        System.out.println("""
+                        ---------------------------------
+                            hope to see you sooon :))
+                        ---------------------------------""");
                         System.exit(0);
                         break;
 
                     default:
                         System.out.println("Enter a number from 1 - 4");
                         break;
+//
+//                    case 5:
+//                        admin.addAirport("dha", "dha");
+//                        System.out.println(admin.airport.toString());
+//
+//                        break;
+
+
+
 
 
                 }
@@ -301,10 +341,9 @@ public class SmartCity {
                 //number = input.nextInt();
             } catch (InputMismatchException ex) {
                 System.out.println("Enter a number");
-                errorOccured = true;
-            } catch (Exception ex) {
+            }
+            catch (Exception ex) {
                 System.out.println("An error occured");
-                errorOccured = true;
 
             }
 
@@ -320,6 +359,8 @@ public class SmartCity {
             input.nextLine();
 
         } while (number != 4);
+
+
 
 
 //        }while (errorOccured == true)

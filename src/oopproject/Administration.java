@@ -14,14 +14,22 @@ public class Administration {
     public ArrayList<Banks> banks = new ArrayList<>();
     public ArrayList<Institute> institutes = new ArrayList<>();
     public ArrayList<Airport> airport = new ArrayList<>();
-    //    public Airport airport;
+//        public Airport airport;
     public City city;
 
-    Hospital hos = new Hospital();
 
     Administration() {
 
     }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
 
     public void setName(String name) {
         this.name = name;
@@ -192,7 +200,7 @@ public class Administration {
 
         } else {
             for (Banks value : banks) {
-                finalresult += "Hospital " + number + "\nName: " + value.name + "\n"
+                finalresult += "Bank " + number + "\nName: " + value.name + "\n"
                         + "Address: " + value.address;
                 finalresult += "\n\n";
                 number++;
@@ -210,19 +218,28 @@ public class Administration {
     }
 
     public String getInstitutes() {
-        String finalresult = "LandMark Type: Instits\n";
-        int number = 1;
-
-
+        String finalresult = "LandMark Type: Institute\n";
         if (institutes.isEmpty()) {
-            return "There are no banks available at the time";
+            return "There are no Institutes available at the time";
 
         } else {
-            for (Banks value : banks) {
-                finalresult += "Hospital " + number + "\nName: " + value.name + "\n"
-                        + "Address: " + value.address;
-                finalresult += "\n\n";
-                number++;
+            for (Institute institute : institutes) {
+                if (institute instanceof School) {
+                    finalresult += "Institue Type: school," + "name: " + institute.name + " " +
+                            "Address: " + institute.address + "\n";
+
+                }
+                else if (institute instanceof  College){
+                    finalresult += "Institue  Type: college, " + "name: " + institute.name + " " +
+                            "Address: " + institute.address + "\n";
+
+                }
+
+                else {
+                    finalresult += "Institue Type: univeristy, "  + "name: " + institute.name + " " +
+                            "Address: " + institute.address + "\n";
+
+                }
             }
         }
         return finalresult;
@@ -230,30 +247,40 @@ public class Administration {
 
 
     public void addAirport(Airport airport) {
+//        this.airport.setName(name);
+//        this.airport.setAddress(address);
+
         this.airport.add(airport);
     }
 
-    public void removeAirport(Airport airport) {
-        this.airport.remove(airport);
+
+    public void removeAirport(int j) {
+        this.airport.remove(j);
     }
 
     public String getAirport() {
-        return airport.toString();
+        String finalresult = "LandMark Type: Airport\n";
+//        int number = 1;
+
+
+        if (airport.isEmpty()) {
+            return "there is no airport available at the time";
+
+        } else {
+            for (Airport value : airport) {
+                finalresult +=  "\nName: " + value.name + "\n"
+                        + "Address: " + value.address;
+                finalresult += "\n\n";
+            }
+        }
+        return finalresult;
     }
-
-//    public String getAirport() {
-//        return airport.toString();
-//    }
-
-    // public void setAirport(Airport airport) {
-    // this.airport = airport;
-    // }
 
     @Override
     public String toString() {
-        return "Administration{" + "\nhotel=" + hotel + "\nrestaurant=" + restaurant + "\nshoppingMalls="
+        return "Administration{" + city + "\nhotel=" + hotel + "\nrestaurant=" + restaurant + "\nshoppingMalls="
                 + shoppingMalls + "\nhospitals=" + hospitals + "\nemergencyNos=" + emergencyNos + "\nbanks=" + banks
-                + "\ninstitutes=" + institutes + "\nairport=" + airport + "\ncity=" + city + '}';
+                + "\ninstitutes=" + institutes + "\nairport=" + airport + '}';
     }
 
 }
