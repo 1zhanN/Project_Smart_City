@@ -67,6 +67,12 @@ public class SmartCityGui extends javax.swing.JFrame {
 
         btn_landmark.setBackground(new java.awt.Color(153, 51, 255));
         btn_landmark.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_landmarkMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_landmarkMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btn_landmarkMousePressed(evt);
             }
@@ -106,6 +112,12 @@ public class SmartCityGui extends javax.swing.JFrame {
 
         btn_accommodation.setBackground(new java.awt.Color(153, 92, 255));
         btn_accommodation.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_accommodationMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_accommodationMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btn_accommodationMousePressed(evt);
             }
@@ -146,6 +158,12 @@ public class SmartCityGui extends javax.swing.JFrame {
 
         btn_food.setBackground(new java.awt.Color(153, 51, 255));
         btn_food.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_foodMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_foodMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btn_foodMousePressed(evt);
             }
@@ -185,6 +203,12 @@ public class SmartCityGui extends javax.swing.JFrame {
 
         btn_help.setBackground(new java.awt.Color(153, 0, 255));
         btn_help.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_helpMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_helpMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btn_helpMousePressed(evt);
             }
@@ -237,6 +261,12 @@ public class SmartCityGui extends javax.swing.JFrame {
 
         btn_soon.setBackground(new java.awt.Color(153, 0, 255));
         btn_soon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_soonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_soonMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btn_soonMousePressed(evt);
             }
@@ -343,7 +373,7 @@ public class SmartCityGui extends javax.swing.JFrame {
         jLayeredPane1.add(jLabel16);
         jLabel16.setBounds(1030, 0, 30, 30);
 
-        bg.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 680));
+        bg.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 690));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -378,53 +408,100 @@ public class SmartCityGui extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jPanel1MousePressed
 
-    private void btn_landmarkMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_landmarkMousePressed
-        setColor(btn_landmark);
-        resetColor(btn_food);
-        resetColor(btn_help);
-        resetColor(btn_accommodation);
-        resetColor(btn_soon);
-    }//GEN-LAST:event_btn_landmarkMousePressed
-
+    
+    
     private void btn_accommodationMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_accommodationMousePressed
         setColor(btn_accommodation);
         resetColor(btn_landmark);
         resetColor(btn_food);
-        resetColor(btn_soon);
         resetColor(btn_help);
-        
+        resetColor(btn_soon);
     }//GEN-LAST:event_btn_accommodationMousePressed
+
+    private void btn_landmarkMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_landmarkMousePressed
+        setColor(btn_landmark);
+        resetColor(btn_accommodation);
+        resetColor(btn_food);
+        resetColor(btn_help);
+        resetColor(btn_soon);
+    }//GEN-LAST:event_btn_landmarkMousePressed
 
     private void btn_foodMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_foodMousePressed
         setColor(btn_food);
+        resetColor(btn_accommodation);
+        resetColor(btn_landmark);
         resetColor(btn_help);
         resetColor(btn_soon);
-        resetColor(btn_landmark);
-        resetColor(btn_accommodation);
-        
     }//GEN-LAST:event_btn_foodMousePressed
 
     private void btn_helpMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_helpMousePressed
         setColor(btn_help);
-        resetColor(btn_soon);
         resetColor(btn_accommodation);
-        resetColor(btn_food);
         resetColor(btn_landmark);
+        resetColor(btn_food);
+        resetColor(btn_soon);
     }//GEN-LAST:event_btn_helpMousePressed
 
     private void btn_soonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_soonMousePressed
         setColor(btn_soon);
+        resetColor(btn_landmark);
         resetColor(btn_accommodation);
         resetColor(btn_landmark);
         resetColor(btn_help);
-        resetColor(btn_food);
     }//GEN-LAST:event_btn_soonMousePressed
+
+    private void btn_accommodationMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_accommodationMouseEntered
+        setColor1(btn_accommodation);
+    }//GEN-LAST:event_btn_accommodationMouseEntered
+
+    private void btn_landmarkMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_landmarkMouseEntered
+        setColor1(btn_landmark);
+    }//GEN-LAST:event_btn_landmarkMouseEntered
+
+    private void btn_foodMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_foodMouseEntered
+        setColor1(btn_food);
+    }//GEN-LAST:event_btn_foodMouseEntered
+
+    private void btn_helpMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_helpMouseEntered
+        setColor1(btn_help);
+    }//GEN-LAST:event_btn_helpMouseEntered
+
+    private void btn_soonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_soonMouseEntered
+        setColor1(btn_soon);
+    }//GEN-LAST:event_btn_soonMouseEntered
+
+    private void btn_accommodationMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_accommodationMouseExited
+        resetColor1(btn_accommodation);
+    }//GEN-LAST:event_btn_accommodationMouseExited
+
+    private void btn_landmarkMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_landmarkMouseExited
+        resetColor1(btn_landmark);
+    }//GEN-LAST:event_btn_landmarkMouseExited
+
+    private void btn_foodMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_foodMouseExited
+        resetColor1(btn_food);
+    }//GEN-LAST:event_btn_foodMouseExited
+
+    private void btn_helpMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_helpMouseExited
+        resetColor1(btn_help);
+    }//GEN-LAST:event_btn_helpMouseExited
+
+    private void btn_soonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_soonMouseExited
+        resetColor1(btn_soon);
+    }//GEN-LAST:event_btn_soonMouseExited
     
     void setColor(JPanel panel){
         panel.setBackground(new Color(153,92,255));
         
     }
+     void setColor1(JPanel panel){
+        panel.setBackground(new Color(153,51,255));
+        
+    }
     void resetColor(JPanel panel){
+        panel.setBackground(new Color(153,0,255));
+    }
+     void resetColor1(JPanel panel){
         panel.setBackground(new Color(153,0,255));
     }
     
