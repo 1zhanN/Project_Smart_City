@@ -343,7 +343,7 @@ public class SmartCityGui extends javax.swing.JFrame {
         jLayeredPane1.add(jLabel16);
         jLabel16.setBounds(1030, 0, 30, 30);
 
-        bg.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 690));
+        bg.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 680));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
