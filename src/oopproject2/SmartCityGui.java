@@ -5,15 +5,17 @@
  */
 package oopproject2;
 
+import java.awt.Color;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Izhan
  */
 public class SmartCityGui extends javax.swing.JFrame {
 
-    /**
-     * Creates new form SmartCityGui
-     */
+    int xMouse;
+    int yMouse;
     public SmartCityGui() {
         initComponents();
     }
@@ -27,7 +29,7 @@ public class SmartCityGui extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        background = new javax.swing.JPanel();
+        bg = new javax.swing.JPanel();
         sidepanel = new javax.swing.JPanel();
         btn_landmark = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -49,17 +51,26 @@ public class SmartCityGui extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
-        background.setBackground(new java.awt.Color(255, 255, 255));
-        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bg.setBackground(new java.awt.Color(255, 255, 255));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        sidepanel.setBackground(new java.awt.Color(204, 123, 252));
+        sidepanel.setBackground(new java.awt.Color(153, 0, 255));
         sidepanel.setForeground(new java.awt.Color(255, 255, 255));
         sidepanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_landmark.setBackground(new java.awt.Color(204, 153, 255));
+        btn_landmark.setBackground(new java.awt.Color(153, 51, 255));
+        btn_landmark.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_landmarkMousePressed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -93,12 +104,18 @@ public class SmartCityGui extends javax.swing.JFrame {
 
         sidepanel.add(btn_landmark, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 350, 60));
 
-        btn_accommodation.setBackground(new java.awt.Color(204, 166, 255));
+        btn_accommodation.setBackground(new java.awt.Color(153, 92, 255));
+        btn_accommodation.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_accommodationMousePressed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oopproject2/images/icons8_hotel_building_32px.png"))); // NOI18N
 
+        jLabel4.setBackground(new java.awt.Color(153, 51, 255));
         jLabel4.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -127,7 +144,12 @@ public class SmartCityGui extends javax.swing.JFrame {
 
         sidepanel.add(btn_accommodation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 350, 60));
 
-        btn_food.setBackground(new java.awt.Color(204, 153, 255));
+        btn_food.setBackground(new java.awt.Color(153, 51, 255));
+        btn_food.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_foodMousePressed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -161,7 +183,12 @@ public class SmartCityGui extends javax.swing.JFrame {
 
         sidepanel.add(btn_food, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 350, -1));
 
-        btn_help.setBackground(new java.awt.Color(204, 153, 255));
+        btn_help.setBackground(new java.awt.Color(153, 0, 255));
+        btn_help.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_helpMousePressed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -208,7 +235,12 @@ public class SmartCityGui extends javax.swing.JFrame {
         jLabel12.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         sidepanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 150, 70));
 
-        btn_soon.setBackground(new java.awt.Color(204, 153, 255));
+        btn_soon.setBackground(new java.awt.Color(153, 0, 255));
+        btn_soon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_soonMousePressed(evt);
+            }
+        });
 
         jLabel9.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -246,9 +278,9 @@ public class SmartCityGui extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         sidepanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 330, 10));
 
-        background.add(sidepanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 680));
+        bg.add(sidepanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 680));
 
-        jPanel3.setBackground(new java.awt.Color(153, 51, 255));
+        jPanel3.setBackground(new java.awt.Color(207, 141, 232));
 
         jLabel11.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -262,32 +294,140 @@ public class SmartCityGui extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(532, Short.MAX_VALUE))
+                .addContainerGap(542, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
                 .addGap(76, 76, 76))
         );
 
-        background.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 700, 160));
+        bg.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 710, 160));
+
+        jPanel1.setOpaque(false);
+        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel1MouseDragged(evt);
+            }
+        });
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel1MousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1030, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jLayeredPane1.add(jPanel1);
+        jPanel1.setBounds(0, 0, 1030, 30);
+
+        jLabel16.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oopproject2/images/icons8_delete_32px_3.png"))); // NOI18N
+        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel16MousePressed(evt);
+            }
+        });
+        jLayeredPane1.add(jLabel16);
+        jLabel16.setBounds(1030, 0, 30, 30);
+
+        bg.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 690));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabel16MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MousePressed
+        // closes the application
+        System.exit(0);
+    }//GEN-LAST:event_jLabel16MousePressed
+
+    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+        // coordinate handling
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_jPanel1MouseDragged
+
+    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+        // coordinate handling
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+        
+    }//GEN-LAST:event_jPanel1MousePressed
+
+    private void btn_landmarkMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_landmarkMousePressed
+        setColor(btn_landmark);
+        resetColor(btn_food);
+        resetColor(btn_help);
+        resetColor(btn_accommodation);
+        resetColor(btn_soon);
+    }//GEN-LAST:event_btn_landmarkMousePressed
+
+    private void btn_accommodationMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_accommodationMousePressed
+        setColor(btn_accommodation);
+        resetColor(btn_landmark);
+        resetColor(btn_food);
+        resetColor(btn_soon);
+        resetColor(btn_help);
+        
+    }//GEN-LAST:event_btn_accommodationMousePressed
+
+    private void btn_foodMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_foodMousePressed
+        setColor(btn_food);
+        resetColor(btn_help);
+        resetColor(btn_soon);
+        resetColor(btn_landmark);
+        resetColor(btn_accommodation);
+        
+    }//GEN-LAST:event_btn_foodMousePressed
+
+    private void btn_helpMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_helpMousePressed
+        setColor(btn_help);
+        resetColor(btn_soon);
+        resetColor(btn_accommodation);
+        resetColor(btn_food);
+        resetColor(btn_landmark);
+    }//GEN-LAST:event_btn_helpMousePressed
+
+    private void btn_soonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_soonMousePressed
+        setColor(btn_soon);
+        resetColor(btn_accommodation);
+        resetColor(btn_landmark);
+        resetColor(btn_help);
+        resetColor(btn_food);
+    }//GEN-LAST:event_btn_soonMousePressed
+    
+    void setColor(JPanel panel){
+        panel.setBackground(new Color(153,92,255));
+        
+    }
+    void resetColor(JPanel panel){
+        panel.setBackground(new Color(153,0,255));
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -299,7 +439,7 @@ public class SmartCityGui extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -324,7 +464,7 @@ public class SmartCityGui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel background;
+    private javax.swing.JPanel bg;
     private javax.swing.JPanel btn_accommodation;
     private javax.swing.JPanel btn_food;
     private javax.swing.JPanel btn_help;
@@ -335,6 +475,7 @@ public class SmartCityGui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -343,6 +484,8 @@ public class SmartCityGui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel sidepanel;
