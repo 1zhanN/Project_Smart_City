@@ -5,10 +5,14 @@
  */
 package Menus;
 
+import form.Panel1;
+import form.Panel2;
 import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.JPanel;
@@ -37,32 +41,99 @@ public class Main extends javax.swing.JFrame {
         ImageIcon iconAdd = new ImageIcon(getClass().getResource("/menu/add.png"));
         ImageIcon iconSubMenu = new ImageIcon(getClass().getResource("/menu/subMenu.png"));
        
-        //  create submenu 
-        MenuItem menuAccommodation1 = new MenuItem(iconSubMenu, "Hotels");
-        MenuItem menuAccommodation2 = new MenuItem(iconSubMenu, "Motels");
-        
-        MenuItem menuLandmark1 = new MenuItem(iconSubMenu, "Banks");
-        MenuItem menuLandmark2 = new MenuItem(iconSubMenu, "Airports");
-        MenuItem menuLandmark3 = new MenuItem(iconSubMenu, "Shoppingmalls");
-        MenuItem menuLandmark4 = new MenuItem(iconSubMenu, "Institutes");
-        
-        MenuItem menuFood1 = new MenuItem(iconSubMenu, "Restaurants");
-        MenuItem menuFood2 = new MenuItem(iconSubMenu, "Cafes");
-        
-        MenuItem menuHelp1 = new MenuItem(iconSubMenu, "Emergency Contacts");
-        MenuItem menuHelp2 = new MenuItem(iconSubMenu, "Hospital");
-        
+        // submenus with panel implementation  
+          MenuItem menuAccommodation1 = new MenuItem(iconSubMenu, "Hotels", new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                panel_body.add(new Panel1());
+                panel_body.repaint();
+                panel_body.revalidate();
+            }
+        });
+          MenuItem menuAccommodation2 = new MenuItem(iconSubMenu, "Motels", new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                panel_body.add(new Panel1());
+                panel_body.repaint();
+                panel_body.revalidate();
+            }
+        });
+            MenuItem menuLandmark1 = new MenuItem(iconSubMenu, "Banks", new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                panel_body.add(new Panel2());
+                panel_body.repaint();
+                panel_body.revalidate();
+            }
+        });
+            MenuItem menuLandmark2 = new MenuItem(iconSubMenu, "Airports", new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                panel_body.add(new Panel1());
+                panel_body.repaint();
+                panel_body.revalidate();
+            }
+        });
+            MenuItem menuLandmark3 = new MenuItem(iconSubMenu, "Shopping Malls", new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                panel_body.add(new Panel2());
+                panel_body.repaint();
+                panel_body.revalidate();
+            }
+        });  
+            MenuItem menuLandmark4 = new MenuItem(iconSubMenu, "Institutes", new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                panel_body.add(new Panel1());
+                panel_body.repaint();
+                panel_body.revalidate();
+            }
+        });   
+            MenuItem menuFood1 = new MenuItem(iconSubMenu, "Restaurants", new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                panel_body.add(new Panel1());
+                panel_body.repaint();
+                panel_body.revalidate();
+            }
+        });
+          MenuItem menuFood2 = new MenuItem(iconSubMenu, "Cafes", new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                panel_body.add(new Panel1());
+                panel_body.repaint();
+                panel_body.revalidate();
+            }
+        });
+        MenuItem menuHelp1 = new MenuItem(iconSubMenu, "Emergency Contacts", new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                panel_body.add(new Panel1());
+                panel_body.repaint();
+                panel_body.revalidate();
+            }
+        });
+        MenuItem menuHelp2 = new MenuItem(iconSubMenu, "Hospital", new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                panel_body.add(new Panel1());
+                panel_body.repaint();
+                panel_body.revalidate();
+            }
+        });   
+       
         
         
         // main menu + subMenu
-        MenuItem menuAccommodation = new MenuItem(iconAccommodation, "Accommodation",menuAccommodation1, menuAccommodation2);
-        MenuItem menuLandmark = new MenuItem(iconLandmark, "Landmarks", menuLandmark1, menuLandmark2, menuLandmark3, menuLandmark4);
-        MenuItem menuFood = new MenuItem(iconFood, "Places To Eat", menuFood1, menuFood2);
-        MenuItem menuHelp = new MenuItem(iconHelp, "Get Help", menuHelp1, menuHelp2);
-        MenuItem menuAdd = new MenuItem(iconAdd, "Coming Soon");
+        MenuItem menuAccommodation = new MenuItem(iconAccommodation, "Accommodation",null ,menuAccommodation1, menuAccommodation2);
+        MenuItem menuLandmark = new MenuItem(iconLandmark, "Landmarks",null, menuLandmark1, menuLandmark2, menuLandmark3, menuLandmark4);
+        MenuItem menuFood = new MenuItem(iconFood, "Places To Eat",null, menuFood1, menuFood2);
+        MenuItem menuHelp = new MenuItem(iconHelp, "Get Help",null, menuHelp1, menuHelp2);
+        MenuItem menuAdd = new MenuItem(iconAdd, "Coming Soon",null);
         addMenu(menuAccommodation, menuLandmark, menuFood, menuHelp, menuAdd);
         
-        
+       
     }
     private void addMenu(MenuItem... menu){
         for(int i = 0; i<menu.length;i++){
@@ -163,18 +234,7 @@ public class Main extends javax.swing.JFrame {
         getContentPane().add(panel_header, java.awt.BorderLayout.PAGE_START);
 
         panel_body.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout panel_bodyLayout = new javax.swing.GroupLayout(panel_body);
-        panel_body.setLayout(panel_bodyLayout);
-        panel_bodyLayout.setHorizontalGroup(
-            panel_bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 755, Short.MAX_VALUE)
-        );
-        panel_bodyLayout.setVerticalGroup(
-            panel_bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 454, Short.MAX_VALUE)
-        );
-
+        panel_body.setLayout(new java.awt.BorderLayout());
         getContentPane().add(panel_body, java.awt.BorderLayout.CENTER);
 
         panel_menu.setBackground(new java.awt.Color(153, 0, 153));

@@ -6,6 +6,7 @@
 package menu;
 
 import java.awt.Dimension;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.Icon;
 
@@ -15,18 +16,26 @@ import javax.swing.Icon;
  */
 public class MenuItem extends javax.swing.JPanel {
 
+  
+    public void setShowing(boolean showing) {
+        this.showing = showing;
+    }
+
     public ArrayList<MenuItem> getSubMenu() {
         return subMenu;
     }
-
     /**
      * Creates new form MenuItem
      */
     private final ArrayList<MenuItem> subMenu = new ArrayList<>();
-    public MenuItem(Icon icon, String menuName, MenuItem... subMenu) {
+    private ActionListener act;
+    public MenuItem(Icon icon, String menuName, ActionListener act, MenuItem... subMenu) {
         initComponents();
         lb_icon.setIcon(icon);
         lb_name.setText(menuName);
+        if(act != null){
+            this.act = act;
+        }
         this.setSize(new Dimension(Integer.MAX_VALUE, 45));
         this.setMaximumSize(new Dimension(Integer.MAX_VALUE, 45));
         this.setMinimumSize(new Dimension(Integer.MAX_VALUE, 45));
@@ -35,7 +44,6 @@ public class MenuItem extends javax.swing.JPanel {
             subMenu[i].setVisible(false);
         }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -78,7 +86,7 @@ public class MenuItem extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lb_name, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lb_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -91,12 +99,12 @@ public class MenuItem extends javax.swing.JPanel {
     private boolean showing = false;
     private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
         if(showing){
-            hideMenu();
-            showing = false;
-            
-        }else{
-            showMenu();
-            showing = true;
+            hideMenu();                
+        }else{ 
+            showMenu();        
+        }
+        if(act != null){
+            act.actionPerformed(null);
         }
     }//GEN-LAST:event_formMousePressed
 
@@ -108,6 +116,9 @@ private void showMenu(){
               sleep();
               subMenu.get(i).setVisible(true);
           }
+          showing = true;
+          getParent().repaint();
+          getParent().revalidate();
           }
    }).start();
 }
@@ -117,8 +128,12 @@ private void hideMenu(){
        public void run(){
           for(int i = subMenu.size()-1; i>=0; i--){
               sleep();
-              subMenu.get(i).setVisible(false);
+              subMenu.get(i).setVisible(false);          
+              subMenu.get(i).hideMenu();
           }
+          getParent().repaint();
+          getParent().revalidate();
+          showing = false;
           }
    }).start();
 }
@@ -129,8 +144,7 @@ private void sleep(){
         
     }
     
-} 
-        
+}         
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lb_icon;
