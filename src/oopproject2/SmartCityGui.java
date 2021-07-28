@@ -10,14 +10,14 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Izhan
+ * @author Izhan, Khadija, Erum
  */
 public class SmartCityGui extends javax.swing.JFrame {
 
     int xMouse;
     int yMouse;
     public SmartCityGui() {
-        initComponents();
+        initComponents();    
     }
 
     /**
@@ -29,86 +29,104 @@ public class SmartCityGui extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        bg = new javax.swing.JPanel();
-        sidepanel = new javax.swing.JPanel();
-        btn_landmark = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        background = new javax.swing.JPanel();
+        information_panel = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        header_panel = new javax.swing.JPanel();
+        btn_close = new javax.swing.JLabel();
+        menu_panel = new javax.swing.JPanel();
         btn_accommodation = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        btn_landmark = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         btn_food = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         btn_help = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         btn_soon = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLayeredPane1 = new javax.swing.JLayeredPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        bg.setBackground(new java.awt.Color(255, 255, 255));
-        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        background.setBackground(new java.awt.Color(255, 255, 255));
+        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        sidepanel.setBackground(new java.awt.Color(153, 0, 255));
-        sidepanel.setForeground(new java.awt.Color(255, 255, 255));
-        sidepanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        information_panel.setBackground(new java.awt.Color(207, 141, 232));
 
-        btn_landmark.setBackground(new java.awt.Color(153, 51, 255));
-        btn_landmark.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_landmarkMouseEntered(evt);
+        jLabel11.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Hotels / Motels ");
+
+        javax.swing.GroupLayout information_panelLayout = new javax.swing.GroupLayout(information_panel);
+        information_panel.setLayout(information_panelLayout);
+        information_panelLayout.setHorizontalGroup(
+            information_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(information_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(652, Short.MAX_VALUE))
+        );
+        information_panelLayout.setVerticalGroup(
+            information_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, information_panelLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addGap(76, 76, 76))
+        );
+
+        background.add(information_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 820, 150));
+
+        header_panel.setOpaque(false);
+        header_panel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                header_panelMouseDragged(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_landmarkMouseExited(evt);
-            }
+        });
+        header_panel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_landmarkMousePressed(evt);
+                header_panelMousePressed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oopproject2/images/icons8_eiffel_tower_32px_1.png"))); // NOI18N
-
-        jLabel2.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Important Landmarks");
-
-        javax.swing.GroupLayout btn_landmarkLayout = new javax.swing.GroupLayout(btn_landmark);
-        btn_landmark.setLayout(btn_landmarkLayout);
-        btn_landmarkLayout.setHorizontalGroup(
-            btn_landmarkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_landmarkLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
-                .addContainerGap())
+        javax.swing.GroupLayout header_panelLayout = new javax.swing.GroupLayout(header_panel);
+        header_panel.setLayout(header_panelLayout);
+        header_panelLayout.setHorizontalGroup(
+            header_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1140, Short.MAX_VALUE)
         );
-        btn_landmarkLayout.setVerticalGroup(
-            btn_landmarkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_landmarkLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(btn_landmarkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+        header_panelLayout.setVerticalGroup(
+            header_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        sidepanel.add(btn_landmark, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 350, 60));
+        jLayeredPane1.add(header_panel);
+        header_panel.setBounds(0, 0, 1140, 30);
+
+        btn_close.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        btn_close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btn_close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oopproject2/images/icons8_delete_32px_3.png"))); // NOI18N
+        btn_close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_closeMousePressed(evt);
+            }
+        });
+        jLayeredPane1.add(btn_close);
+        btn_close.setBounds(1140, 0, 30, 30);
+
+        menu_panel.setBackground(new java.awt.Color(153, 0, 255));
+        menu_panel.setForeground(new java.awt.Color(255, 255, 255));
+        menu_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_accommodation.setBackground(new java.awt.Color(153, 92, 255));
         btn_accommodation.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -154,7 +172,52 @@ public class SmartCityGui extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        sidepanel.add(btn_accommodation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 350, 60));
+        menu_panel.add(btn_accommodation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 350, 60));
+
+        btn_landmark.setBackground(new java.awt.Color(153, 51, 255));
+        btn_landmark.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_landmarkMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_landmarkMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_landmarkMousePressed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oopproject2/images/icons8_eiffel_tower_32px_1.png"))); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Important Landmarks");
+
+        javax.swing.GroupLayout btn_landmarkLayout = new javax.swing.GroupLayout(btn_landmark);
+        btn_landmark.setLayout(btn_landmarkLayout);
+        btn_landmarkLayout.setHorizontalGroup(
+            btn_landmarkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_landmarkLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        btn_landmarkLayout.setVerticalGroup(
+            btn_landmarkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_landmarkLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(btn_landmarkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        menu_panel.add(btn_landmark, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 350, 60));
 
         btn_food.setBackground(new java.awt.Color(153, 51, 255));
         btn_food.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -199,7 +262,7 @@ public class SmartCityGui extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        sidepanel.add(btn_food, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 350, -1));
+        menu_panel.add(btn_food, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 350, -1));
 
         btn_help.setBackground(new java.awt.Color(153, 0, 255));
         btn_help.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -244,20 +307,7 @@ public class SmartCityGui extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        sidepanel.add(btn_help, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 350, -1));
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("ہر قدم ساتھ");
-        sidepanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 110, -1));
-
-        jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 1, 48)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("ہمسفر");
-        jLabel12.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        sidepanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 150, 70));
+        menu_panel.add(btn_help, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 350, -1));
 
         btn_soon.setBackground(new java.awt.Color(153, 0, 255));
         btn_soon.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -302,111 +352,63 @@ public class SmartCityGui extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        sidepanel.add(btn_soon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 350, -1));
+        menu_panel.add(btn_soon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 350, -1));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("ہر قدم ساتھ");
+        menu_panel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 110, -1));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 1, 48)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("ہمسفر");
+        jLabel12.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        menu_panel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 150, 70));
 
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
-        sidepanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 330, 10));
+        menu_panel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 330, 10));
 
-        bg.add(sidepanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 680));
+        jLayeredPane1.add(menu_panel);
+        menu_panel.setBounds(0, 0, 350, 910);
 
-        jPanel3.setBackground(new java.awt.Color(207, 141, 232));
-
-        jLabel11.setFont(new java.awt.Font("Franklin Gothic Medium", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Hotels / Motels ");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(542, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
-                .addGap(76, 76, 76))
-        );
-
-        bg.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 710, 160));
-
-        jPanel1.setOpaque(false);
-        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jPanel1MouseDragged(evt);
-            }
-        });
-        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel1MousePressed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1030, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-
-        jLayeredPane1.add(jPanel1);
-        jPanel1.setBounds(0, 0, 1030, 30);
-
-        jLabel16.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/oopproject2/images/icons8_delete_32px_3.png"))); // NOI18N
-        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel16MousePressed(evt);
-            }
-        });
-        jLayeredPane1.add(jLabel16);
-        jLabel16.setBounds(1030, 0, 30, 30);
-
-        bg.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 690));
+        background.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 910));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(1170, 910));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel16MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MousePressed
+    private void btn_closeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_closeMousePressed
         // closes the application
         System.exit(0);
-    }//GEN-LAST:event_jLabel16MousePressed
+    }//GEN-LAST:event_btn_closeMousePressed
 
-    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+    private void header_panelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_header_panelMouseDragged
         // coordinate handling
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xMouse, y - yMouse);
-    }//GEN-LAST:event_jPanel1MouseDragged
+    }//GEN-LAST:event_header_panelMouseDragged
 
-    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+    private void header_panelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_header_panelMousePressed
         // coordinate handling
         xMouse = evt.getX();
         yMouse = evt.getY();
         
-    }//GEN-LAST:event_jPanel1MousePressed
+    }//GEN-LAST:event_header_panelMousePressed
 
     
     
@@ -541,18 +543,20 @@ public class SmartCityGui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel bg;
+    private javax.swing.JPanel background;
     private javax.swing.JPanel btn_accommodation;
+    private javax.swing.JLabel btn_close;
     private javax.swing.JPanel btn_food;
     private javax.swing.JPanel btn_help;
     private javax.swing.JPanel btn_landmark;
     private javax.swing.JPanel btn_soon;
+    private javax.swing.JPanel header_panel;
+    private javax.swing.JPanel information_panel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -562,9 +566,7 @@ public class SmartCityGui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JPanel sidepanel;
+    private javax.swing.JPanel menu_panel;
     // End of variables declaration//GEN-END:variables
 }
