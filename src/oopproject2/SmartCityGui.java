@@ -8,6 +8,7 @@ package oopproject2;
 import java.awt.Color;
 import javax.swing.JPanel;
 
+
 /**
  *
  * @author Izhan
