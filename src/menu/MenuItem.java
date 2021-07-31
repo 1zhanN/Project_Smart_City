@@ -58,6 +58,7 @@ public class MenuItem extends javax.swing.JPanel {
         lb_icon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(102, 102, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setOpaque(false);
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {

@@ -26,6 +26,7 @@ public class loadPage extends javax.swing.JFrame {
     /**
      * Creates new form loadPage
      */
+    
     int xMouse;
     int yMouse;
     public loadPage() {
