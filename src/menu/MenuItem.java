@@ -97,6 +97,7 @@ public class MenuItem extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    // to open submenu
     private boolean showing = false;
     private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
         if(showing){

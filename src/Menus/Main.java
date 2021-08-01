@@ -5,9 +5,6 @@
  */
 package Menus;
 
-import form.Panel1;
-import form.Panel2;
-import form.Panel3;
 import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
@@ -33,14 +30,16 @@ public class Main extends javax.swing.JFrame {
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         execute();
     }  
+    // this method switches between panels on runtime
     
-public void switchPanels(JPanel panel){
-    jLayeredPane1.removeAll();
-    jLayeredPane1.add(panel);
-    jLayeredPane1.repaint();
-    jLayeredPane1.revalidate();
+    public void switchPanels(JPanel panel){
+        jLayeredPane1.removeAll();
+        jLayeredPane1.add(panel);
+        jLayeredPane1.repaint();
+        jLayeredPane1.revalidate();
 }
     
+    // object of images from 'menu' folder
     private void execute(){
         ImageIcon iconAccommodation = new ImageIcon(getClass().getResource("/menu/hotel.png"));
         ImageIcon iconLandmark = new ImageIcon(getClass().getResource("/menu/landmark.png"));
@@ -48,7 +47,9 @@ public void switchPanels(JPanel panel){
         ImageIcon iconHelp = new ImageIcon(getClass().getResource("/menu/information.png"));
         ImageIcon iconAdd = new ImageIcon(getClass().getResource("/menu/add.png"));
         ImageIcon iconSubMenu = new ImageIcon(getClass().getResource("/menu/subMenu.png"));
+        ImageIcon iconAdd2 = new ImageIcon(getClass().getResource("/menu/christmas_gift.png"));
        
+        
         // submenus with panel implementation  
           MenuItem menuAccommodation1 = new MenuItem(iconSubMenu, "Hotels", new ActionListener() {
             @Override
@@ -110,6 +111,14 @@ public void switchPanels(JPanel panel){
               switchPanels(Panel10);
             }
         });   
+          MenuItem menuSoon = new MenuItem(iconAdd2, "Gifts And Vouchers", new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+              switchPanels(Panel11);
+            }
+        });   
+       
+      
        
         
         
@@ -118,7 +127,7 @@ public void switchPanels(JPanel panel){
         MenuItem menuLandmark = new MenuItem(iconLandmark, "Landmarks",null, menuLandmark1, menuLandmark2, menuLandmark3, menuLandmark4);
         MenuItem menuFood = new MenuItem(iconFood, "Places To Eat",null, menuFood1, menuFood2);
         MenuItem menuHelp = new MenuItem(iconHelp, "Get Help",null, menuHelp1, menuHelp2);
-        MenuItem menuAdd = new MenuItem(iconAdd, "Coming Soon",null);
+        MenuItem menuAdd = new MenuItem(iconAdd, "Coming Soon",null, menuSoon);
         addMenu(menuAccommodation, menuLandmark, menuFood, menuHelp, menuAdd);
         
        
@@ -136,7 +145,7 @@ public void switchPanels(JPanel panel){
     }
     @Override
     public void setExtendedState(int state) {
-        super.setExtendedState(MAXIMIZED_BOTH); 
+        super.setExtendedState(NORMAL); 
     }
 
 
@@ -190,6 +199,8 @@ public void switchPanels(JPanel panel){
         jLabel13 = new javax.swing.JLabel();
         Panel10 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
+        Panel11 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
         panel_menu = new JpanelGradient();
         jScrollPane1 = new javax.swing.JScrollPane();
         menus = new JpanelGradient();
@@ -260,14 +271,14 @@ public void switchPanels(JPanel panel){
             .addGroup(Panel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(617, Short.MAX_VALUE))
+                .addContainerGap(612, Short.MAX_VALUE))
         );
         Panel1Layout.setVerticalGroup(
             Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(Panel1, "card2");
@@ -282,14 +293,14 @@ public void switchPanels(JPanel panel){
             .addGroup(Panel2Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(617, Short.MAX_VALUE))
+                .addContainerGap(612, Short.MAX_VALUE))
         );
         Panel2Layout.setVerticalGroup(
             Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(Panel2, "card3");
@@ -306,14 +317,14 @@ public void switchPanels(JPanel panel){
             .addGroup(Panel3Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(617, Short.MAX_VALUE))
+                .addContainerGap(612, Short.MAX_VALUE))
         );
         Panel3Layout.setVerticalGroup(
             Panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(Panel3, "card4");
@@ -330,14 +341,14 @@ public void switchPanels(JPanel panel){
             .addGroup(Panel4Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(617, Short.MAX_VALUE))
+                .addContainerGap(612, Short.MAX_VALUE))
         );
         Panel4Layout.setVerticalGroup(
             Panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(Panel4, "card5");
@@ -352,14 +363,14 @@ public void switchPanels(JPanel panel){
             .addGroup(Panel5Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(617, Short.MAX_VALUE))
+                .addContainerGap(612, Short.MAX_VALUE))
         );
         Panel5Layout.setVerticalGroup(
             Panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(Panel5, "card6");
@@ -374,14 +385,14 @@ public void switchPanels(JPanel panel){
             .addGroup(Panel6Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(617, Short.MAX_VALUE))
+                .addContainerGap(612, Short.MAX_VALUE))
         );
         Panel6Layout.setVerticalGroup(
             Panel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(Panel6, "card7");
@@ -396,14 +407,14 @@ public void switchPanels(JPanel panel){
             .addGroup(Panel7Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(617, Short.MAX_VALUE))
+                .addContainerGap(612, Short.MAX_VALUE))
         );
         Panel7Layout.setVerticalGroup(
             Panel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(Panel7, "card8");
@@ -418,14 +429,14 @@ public void switchPanels(JPanel panel){
             .addGroup(Panel8Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(617, Short.MAX_VALUE))
+                .addContainerGap(612, Short.MAX_VALUE))
         );
         Panel8Layout.setVerticalGroup(
             Panel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(Panel8, "card9");
@@ -440,14 +451,14 @@ public void switchPanels(JPanel panel){
             .addGroup(Panel9Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(617, Short.MAX_VALUE))
+                .addContainerGap(612, Short.MAX_VALUE))
         );
         Panel9Layout.setVerticalGroup(
             Panel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(Panel9, "card10");
@@ -462,17 +473,39 @@ public void switchPanels(JPanel panel){
             .addGroup(Panel10Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(617, Short.MAX_VALUE))
+                .addContainerGap(612, Short.MAX_VALUE))
         );
         Panel10Layout.setVerticalGroup(
             Panel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel10Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(Panel10, "card11");
+
+        jLabel15.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel15.setText("LABEL 11");
+
+        javax.swing.GroupLayout Panel11Layout = new javax.swing.GroupLayout(Panel11);
+        Panel11.setLayout(Panel11Layout);
+        Panel11Layout.setHorizontalGroup(
+            Panel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel11Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(612, Short.MAX_VALUE))
+        );
+        Panel11Layout.setVerticalGroup(
+            Panel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(370, Short.MAX_VALUE))
+        );
+
+        jLayeredPane1.add(Panel11, "card12");
 
         panel_body.add(jLayeredPane1, java.awt.BorderLayout.CENTER);
 
@@ -542,6 +575,7 @@ public void switchPanels(JPanel panel){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Panel1;
     private javax.swing.JPanel Panel10;
+    private javax.swing.JPanel Panel11;
     private javax.swing.JPanel Panel2;
     private javax.swing.JPanel Panel3;
     private javax.swing.JPanel Panel4;
@@ -555,6 +589,7 @@ public void switchPanels(JPanel panel){
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
