@@ -10,6 +10,10 @@ import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Paint;
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -35,8 +39,20 @@ public class LoginDesign extends javax.swing.JFrame {
         humSafar.setOpaque(false);
 
     }
+    
+    
+        public void playSound1() {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("C:\\Users\\HP\\Downloads\\Button-SoundBible.com-1420500901.wav"));
 
-
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (Exception ex) {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace();
+        }
+    }
 
     class JpanelGradient extends JPanel {
 
@@ -44,7 +60,7 @@ public class LoginDesign extends javax.swing.JFrame {
             Graphics2D g2d = (Graphics2D) g;
             int width = getWidth();
             int height = getHeight();
-            
+
             Color color1 = new Color(165, 71, 160);
             Color color2 = new Color(66, 39, 90);
             GradientPaint gp = new GradientPaint(0, 0, color1, 180, height, color2);
@@ -73,10 +89,12 @@ public class LoginDesign extends javax.swing.JFrame {
         login = new javax.swing.JButton();
         admin = new javax.swing.JLabel();
         back = new javax.swing.JButton();
+        btn_close = new javax.swing.JButton();
         humSafar = new javax.swing.JLabel();
         minLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(63, 31, 63));
 
@@ -137,6 +155,18 @@ public class LoginDesign extends javax.swing.JFrame {
             }
         });
 
+        btn_close.setBackground(new java.awt.Color(165, 71, 160));
+        btn_close.setForeground(new java.awt.Color(255, 255, 255));
+        btn_close.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\JavaApplication11\\src\\menu\\icons8_delete_26px.png")); // NOI18N
+        btn_close.setBorder(null);
+        btn_close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_close.setFocusPainted(false);
+        btn_close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_closeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -160,11 +190,15 @@ public class LoginDesign extends javax.swing.JFrame {
                         .addGap(74, 74, 74)
                         .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(102, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btn_close, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
+                .addComponent(btn_close, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
                 .addComponent(admin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(user)
@@ -229,6 +263,7 @@ public class LoginDesign extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
@@ -237,22 +272,23 @@ public class LoginDesign extends javax.swing.JFrame {
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
-        
-        
+
+        playSound1();
         String Username = username.getText();
         String password = jPasswordField1.getText();
-        
-        if(Username.equals("khadija") && password.equals("khadija")){
-            restDesign tab = new restDesign();
+
+        if (Username.equals("khadija") && password.equals("khadija")) {
+            subMain111 tab = new subMain111();
             tab.setVisible(true);
             this.dispose();
-        
-    }
+
+        }
     }//GEN-LAST:event_loginActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         // TODO add your handling code here:
-        
+        playSound1();
+
         mainPage obj = new mainPage();
         obj.setVisible(true);
         this.dispose();
@@ -261,6 +297,11 @@ public class LoginDesign extends javax.swing.JFrame {
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_backMouseClicked
+
+    private void btn_closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_closeActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_btn_closeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -289,21 +330,20 @@ public class LoginDesign extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-    /* Create and display the form */
-    java.awt.EventQueue.invokeLater ( new Runnable() {
-        
-            
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
 
-    public void run() {
-        new LoginDesign().setVisible(true);
-    }
-}
-);
+            public void run() {
+                new LoginDesign().setVisible(true);
+            }
+        }
+        );
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel admin;
     private javax.swing.JButton back;
+    private javax.swing.JButton btn_close;
     private javax.swing.JLabel humSafar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;

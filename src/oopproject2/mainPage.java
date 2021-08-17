@@ -10,6 +10,11 @@ import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
+import Menus.Mainn;
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 /**
  *
@@ -22,11 +27,12 @@ public class mainPage extends javax.swing.JFrame {
      */
     public mainPage() {
         initComponents();
+
         humSafar.setForeground(new Color(187, 187, 187));
-        
+
 //        humSafar.setForeground(new Color(32,33,35));
         minLabel.setForeground(new Color(187, 187, 187));
-           login.setForeground(new Color(187, 187, 187));
+        login.setForeground(new Color(187, 187, 187));
         explore.setForeground(new Color(187, 187, 187));
 //        minLabel.setForeground(new Color(32,33,35));
 
@@ -34,6 +40,19 @@ public class mainPage extends javax.swing.JFrame {
 //p1.setBounds(10,10,100,60);
 //p1.setOpaque(false);
 //p1 = new RoundedPanel(10, Color.CYAN);
+    }
+
+    public void playSound1() {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("C:\\Users\\HP\\Downloads\\Button-SoundBible.com-1420500901.wav"));
+
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (Exception ex) {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace();
+        }
     }
 
     class JpanelGradient extends JPanel {
@@ -44,15 +63,16 @@ public class mainPage extends javax.swing.JFrame {
             int height = getHeight();
 
 //            Color color1 = new Color(32,33,35);
-            Color color1 = new Color(32,33,35);
+            Color color1 = new Color(32, 33, 35);
 //            Color color2 = new Color(32,33,35);
-            Color color2 = new Color(32,33,35);
+            Color color2 = new Color(32, 33, 35);
             GradientPaint gp = new GradientPaint(0, 0, color1, 180, height, color2);
             g2d.setPaint(gp);
             g2d.fillRect(0, 0, width, height);
         }
     }
-        class JpanelGradient1 extends JPanel {
+
+    class JpanelGradient1 extends JPanel {
 
         protected void paintComponent(Graphics g) {
             Graphics2D g2d = (Graphics2D) g;
@@ -60,7 +80,7 @@ public class mainPage extends javax.swing.JFrame {
             int height = getHeight();
 
 //            Color color1 = new Color(32,33,35);
-            Color color1 = new Color(32,33,35);
+            Color color1 = new Color(32, 33, 35);
 //            Color color2 = new Color(32,33,35);
             Color color2 = new Color(61, 61, 59);
             GradientPaint gp = new GradientPaint(0, 0, color1, 180, height, color2);
@@ -68,7 +88,6 @@ public class mainPage extends javax.swing.JFrame {
             g2d.fillRect(0, 0, width, height);
         }
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -85,8 +104,11 @@ public class mainPage extends javax.swing.JFrame {
         minLabel = new javax.swing.JLabel();
         explore = new javax.swing.JButton();
         login = new javax.swing.JButton();
+        btn_close = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setFocusCycleRoot(false);
+        setUndecorated(true);
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Downloads\\upside-icons.gif")); // NOI18N
 
@@ -98,6 +120,11 @@ public class mainPage extends javax.swing.JFrame {
 
         explore.setBackground(new java.awt.Color(63, 31, 63));
         explore.setText("Explore");
+        explore.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exploreActionPerformed(evt);
+            }
+        });
 
         login.setBackground(new java.awt.Color(63, 31, 63));
         login.setText("Admin Login");
@@ -107,36 +134,53 @@ public class mainPage extends javax.swing.JFrame {
             }
         });
 
+        btn_close.setBackground(new java.awt.Color(165, 71, 160));
+        btn_close.setForeground(new java.awt.Color(255, 255, 255));
+        btn_close.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\JavaApplication11\\src\\menu\\icons8_delete_26px.png")); // NOI18N
+        btn_close.setBorder(null);
+        btn_close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_close.setFocusPainted(false);
+        btn_close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_closeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_closeMouseExited(evt);
+            }
+        });
+        btn_close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_closeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(minLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(60, 60, 60))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(humSafar)
-                            .addGap(48, 48, 48)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(explore, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
-                        .addGap(40, 40, 40))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(minLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(humSafar)
+                            .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(explore, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(34, 34, 34))
+                    .addComponent(btn_close, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 581, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(139, 139, 139)
+                .addComponent(btn_close, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74)
                 .addComponent(humSafar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(minLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
+                .addGap(54, 54, 54)
                 .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(explore, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -147,26 +191,44 @@ public class mainPage extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
-           LoginDesign obj = new LoginDesign();
+        playSound1();
+        LoginDesign obj = new LoginDesign();
         obj.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_loginActionPerformed
+
+    private void exploreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exploreActionPerformed
+        // TODO add your handling code here:
+        playSound1();
+        Mainn obj = new Mainn();
+        obj.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_exploreActionPerformed
+
+    private void btn_closeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_closeMouseEntered
+        btn_close.setBackground(new Color(66, 39, 90));
+    }//GEN-LAST:event_btn_closeMouseEntered
+
+    private void btn_closeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_closeMouseExited
+        btn_close.setBackground(new Color(165, 71, 160));
+    }//GEN-LAST:event_btn_closeMouseExited
+
+    private void btn_closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_closeActionPerformed
+        dispose();
+    }//GEN-LAST:event_btn_closeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -211,6 +273,7 @@ public class mainPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_close;
     private javax.swing.JButton explore;
     private javax.swing.JLabel humSafar;
     private javax.swing.JLabel jLabel2;

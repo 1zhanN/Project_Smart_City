@@ -13,11 +13,15 @@ import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.HeadlessException;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
@@ -58,10 +62,25 @@ public class airportDesign extends javax.swing.JFrame {
     /**
      * Creates new form TableDesign
      */
+        public void playSound1() {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("C:\\Users\\HP\\Downloads\\Button-SoundBible.com-1420500901.wav"));
+
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (Exception ex) {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace();
+        }
+    }
     public airportDesign() {
         initComponents();
 
 //         jTable1.getTableHeader().setDefaultRenderer(new Table.HeaderColor());
+
+
+
         jTable1.getTableHeader().setDefaultRenderer(new airportDesign.HeaderColor());
 
 //        setBackgroud(new Color(0,0,0,0));
@@ -157,6 +176,7 @@ public class airportDesign extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btn_close = new javax.swing.JButton();
         jPanel1 = new JpanelGradient();
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new JpanelGradient1();
@@ -173,6 +193,7 @@ public class airportDesign extends javax.swing.JFrame {
         nameText = new javax.swing.JTextField();
         snoLabel = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
+        btn_close1 = new javax.swing.JButton();
         humSafar = new javax.swing.JLabel();
         miniLabel = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
@@ -182,7 +203,19 @@ public class airportDesign extends javax.swing.JFrame {
         clear = new javax.swing.JLabel();
         back = new javax.swing.JLabel();
 
+        btn_close.setBackground(new java.awt.Color(165, 71, 160));
+        btn_close.setForeground(new java.awt.Color(255, 255, 255));
+        btn_close.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\JavaApplication11\\src\\menu\\icons8_delete_26px.png")); // NOI18N
+        btn_close.setBorder(null);
+        btn_close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_closeActionPerformed(evt);
+            }
+        });
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(63, 31, 63));
 
@@ -286,6 +319,18 @@ public class airportDesign extends javax.swing.JFrame {
         snoLabel.setBackground(new java.awt.Color(187, 187, 187));
         snoLabel.setText("Sno");
 
+        btn_close1.setBackground(new java.awt.Color(165, 71, 160));
+        btn_close1.setForeground(new java.awt.Color(255, 255, 255));
+        btn_close1.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\JavaApplication11\\src\\menu\\icons8_delete_26px.png")); // NOI18N
+        btn_close1.setBorder(null);
+        btn_close1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_close1.setFocusPainted(false);
+        btn_close1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_close1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -320,11 +365,15 @@ public class airportDesign extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(addressText, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btn_close1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addComponent(btn_close1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -344,7 +393,7 @@ public class airportDesign extends javax.swing.JFrame {
                         .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 13, Short.MAX_VALUE)
                         .addComponent(jSeparator1))
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         humSafar.setFont(new java.awt.Font("Segoe UI", 0, 50)); // NOI18N
@@ -485,6 +534,7 @@ public class airportDesign extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addressTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressTextActionPerformed
@@ -557,9 +607,10 @@ public class airportDesign extends javax.swing.JFrame {
 
     private void insertMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertMouseClicked
         // TODO add your handling code here:
+        playSound1();
 
         try {
-            String sql = "INSERT INTO admin.airport (sno, name, address) VALUES (?, ?,?);";
+            String sql = "INSERT INTO admin.airport (sno, name, address) VALUES (?, ?,?);";  //query
             con = DriverManager.getConnection(url, username, password);
             pst = con.prepareStatement(sql);
             pst.setString(1, snoText.getText());
@@ -581,6 +632,7 @@ public class airportDesign extends javax.swing.JFrame {
 
     private void deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseClicked
         // TODO add your handling code here:
+        playSound1();
 
         try {
             String sql = "DELETE FROM admin.airport  WHERE sno =?";
@@ -610,10 +662,12 @@ public class airportDesign extends javax.swing.JFrame {
         snoText.setText("");
         nameText.setText("");
         addressText.setText("");
+        playSound1();
     }//GEN-LAST:event_clearMouseClicked
 
     private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked
         // TODO add your handling code here:
+        playSound1();
 
         try {
 
@@ -641,10 +695,21 @@ public class airportDesign extends javax.swing.JFrame {
 
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
         // TODO add your handling code here:
-        LoginDesign obj = new LoginDesign();
+        playSound1();
+        subMain111 obj = new subMain111();
         obj.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backMouseClicked
+
+    private void btn_closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_closeActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_btn_closeActionPerformed
+
+    private void btn_close1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_close1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_btn_close1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -679,6 +744,30 @@ public class airportDesign extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -693,6 +782,8 @@ public class airportDesign extends javax.swing.JFrame {
     private javax.swing.JTextField addressText;
     private javax.swing.JLabel admin;
     private javax.swing.JLabel back;
+    private javax.swing.JButton btn_close;
+    private javax.swing.JButton btn_close1;
     private javax.swing.JLabel clear;
     private javax.swing.JLabel delete;
     private javax.swing.JLabel hospitalLabel;

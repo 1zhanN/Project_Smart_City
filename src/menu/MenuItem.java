@@ -16,7 +16,6 @@ import javax.swing.Icon;
  */
 public class MenuItem extends javax.swing.JPanel {
 
-  
     public void setShowing(boolean showing) {
         this.showing = showing;
     }
@@ -29,21 +28,23 @@ public class MenuItem extends javax.swing.JPanel {
      */
     private final ArrayList<MenuItem> subMenu = new ArrayList<>();
     private ActionListener act;
+
     public MenuItem(Icon icon, String menuName, ActionListener act, MenuItem... subMenu) {
         initComponents();
         lb_icon.setIcon(icon);
         lb_name.setText(menuName);
-        if(act != null){
+        if (act != null) {
             this.act = act;
         }
         this.setSize(new Dimension(Integer.MAX_VALUE, 45));
         this.setMaximumSize(new Dimension(Integer.MAX_VALUE, 45));
         this.setMinimumSize(new Dimension(Integer.MAX_VALUE, 45));
-        for (int i =0; i<subMenu.length;i++){            
+        for (int i = 0; i < subMenu.length; i++) {
             this.subMenu.add(subMenu[i]);
             subMenu[i].setVisible(false);
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -100,53 +101,55 @@ public class MenuItem extends javax.swing.JPanel {
     // to open submenu
     private boolean showing = false;
     private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
-        if(showing){
-            hideMenu();                
-        }else{ 
-            showMenu();        
+        if (showing) {
+            hideMenu();
+        } else {
+            showMenu();
         }
-        if(act != null){
+        if (act != null) {
             act.actionPerformed(null);
         }
     }//GEN-LAST:event_formMousePressed
 
-private void showMenu(){
-   new Thread(new Runnable(){
-    @Override
-       public void run(){
-          for(int i =0; i<subMenu.size(); i++){
-              sleep();
-              subMenu.get(i).setVisible(true);
-          }
-          showing = true;
-          getParent().repaint();
-          getParent().revalidate();
-          }
-   }).start();
-}
-private void hideMenu(){
-      new Thread(new Runnable(){
-       @Override
-       public void run(){
-          for(int i = subMenu.size()-1; i>=0; i--){
-              sleep();
-              subMenu.get(i).setVisible(false);          
-              subMenu.get(i).hideMenu();
-          }
-          getParent().repaint();
-          getParent().revalidate();
-          showing = false;
-          }
-   }).start();
-}
-private void sleep(){
-    try{
-        Thread.sleep(20);
-    }catch(Exception e){
-        
+    private void showMenu() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < subMenu.size(); i++) {
+                    sleep();
+                    subMenu.get(i).setVisible(true);
+                }
+                showing = true;
+                getParent().repaint();
+                getParent().revalidate();
+            }
+        }).start();
     }
-    
-}         
+
+    private void hideMenu() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = subMenu.size() - 1; i >= 0; i--) {
+                    sleep();
+                    subMenu.get(i).setVisible(false);
+                    subMenu.get(i).hideMenu();
+                }
+                getParent().repaint();
+                getParent().revalidate();
+                showing = false;
+            }
+        }).start();
+    }
+
+    private void sleep() {
+        try {
+            Thread.sleep(20);
+        } catch (Exception e) {
+
+        }
+
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lb_icon;
