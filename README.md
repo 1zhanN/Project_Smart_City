@@ -26,7 +26,8 @@ Our project is implemented on Java (swing library) covering most if not all of t
 
 Collaborators 
 
-@KhadijaSajid @Erum Rehman
+<a href="https://github.com/KhadijaSajid">@KhadijaSajid<a>
+<a href="https://github.com/Erum-Rehman">@Erum Rehman<a>
 
 ![Capture5](https://user-images.githubusercontent.com/57583461/132851777-92b568d9-b358-4c0e-817b-d07e59e5ca83.PNG)
 
