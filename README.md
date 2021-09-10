@@ -1,5 +1,6 @@
 # SmartCity #java #swing 
-university project which covers the pillars/concepts of OOP
+
+Our second year university project which covers the pillars/concepts of OOP
 
 
 ہمسفر    |  Exploring Cities Redisgned  
@@ -25,4 +26,8 @@ Our project is implemented on Java (swing library) covering most if not all of t
 
 Collaborators 
 
+@KhadijaSajid @Erum Rehman
+
 ![Capture5](https://user-images.githubusercontent.com/57583461/132851777-92b568d9-b358-4c0e-817b-d07e59e5ca83.PNG)
+
+Thank You !!
