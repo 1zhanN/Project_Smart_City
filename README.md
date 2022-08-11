@@ -3,7 +3,7 @@
 Our second year university project which covers the pillars/concepts of OOP
 
 
-ہمسفر    |  Exploring Cities Redisgned  
+ہمسفر    |  Exploring Cities Redesigned 
  
 Is a Smart City platform whose usability covers all of the important things you can expect from a city oriented assistant.
 You’re a tourist in a new city? ہمسفر | is for you, you’re an international student or wanting to study in a new city, well we got you covered. Stuck in an unknown environment? We can help you get on track.
